@@ -1,4 +1,4 @@
-// Анимация появления при прокрутке
+// Плавное появление блоков
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -7,6 +7,4 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('.animate-up').forEach(el => {
-    observer.observe(el);
-});
+document.querySelectorAll('.animate-up').forEach(el => observer.observe(el));
